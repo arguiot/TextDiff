@@ -20,7 +20,8 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "TextDiff",
-            dependencies: []),
+            dependencies: [],
+            swiftSettings: [.unsafeFlags(["-Xfrontend", "-enable-experimental-string-processing"])]),
         .testTarget(
             name: "TextDiffTests",
             dependencies: ["TextDiff"]),
